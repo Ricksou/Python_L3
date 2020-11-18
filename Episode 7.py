@@ -43,6 +43,23 @@ def generateur(l,nb):
 print(generateur(["a","b","c","d"],2))
 
 
+##########-----------------------------------#############
+def generateur():
+    yield "a"
+    yield "b"
+    yield "c"
+    
+i=generateur()
+nb=2
+j=0
+for v in i:
+    while j <2:
+        print(v) 
+        j+=1
+    j=0
+
+
+
 #######################################################################################
 
 
@@ -58,6 +75,21 @@ def powerset(l):
 
 l=[1,2,3]
 print(powerset(l))
+
+##############--------------------------------##################
+
+def powerset(l,i):
+    yield list(combinations(l,i))
+
+l=[1,2,3]
+r=len(l)
+i=0
+g=powerset(l,i)
+
+for i in range(0,r+1,1):
+    g=powerset(l,i)
+    for e in g:
+        print(e)
 
 ############################################################################################
 
